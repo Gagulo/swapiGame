@@ -1,7 +1,16 @@
-<mat-card>
-  <mat-card-title>Player</mat-card-title>
+<mat-card *ngIf="person$ | async as person">
+  <mat-card-title>Player 1 - Person</mat-card-title>
   <mat-card-content>
-    <p>Name: {{ cardContent?.name }}</p>
-    <p>Mass: {{ cardContent?.mass }}</p>
+    <p>Name: {{ person.name ?? '' }}</p>
+    <p>Mass: {{ person.mass ?? '' }}</p>
   </mat-card-content>
 </mat-card>
+<mat-card *ngIf="starship$ | async as starship">
+  <mat-card-title>Player 2 - Starship</mat-card-title>
+  <mat-card-content>
+    <p>Name: {{ starship.name ?? '' }}</p>
+    <p>Mass: {{ starship.crew ?? '' }}</p>
+  </mat-card-content>
+</mat-card>
+
+<button mat-button color="warn" (click)="pickRandomElement()">GAME</button>
