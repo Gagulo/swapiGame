@@ -1,4 +1,10 @@
 export type StarShip = {
   name: string;
-  crew: number;
+  uid: number;
+  url: string
+}
+
+export type StarshipDetails = {
+  name: string;
+  crew: string
 }

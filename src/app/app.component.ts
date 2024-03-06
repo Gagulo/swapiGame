@@ -4,7 +4,7 @@ import {ResourcesService} from './shared/services/resources.service';
 import {ContentCardComponent} from "./features/content-card/content-card.component";
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
-import {Observable} from "rxjs";
+import {combineLatest, Observable} from "rxjs";
 import {map} from 'rxjs/operators';
 import {PeopleResponse, StarshipResponse} from "./shared/models/resources.model";
 
@@ -17,18 +17,19 @@ import {PeopleResponse, StarshipResponse} from "./shared/models/resources.model"
 })
 export class AppComponent implements OnInit {
   title = 'swapi';
-  people$!: Observable<PeopleResponse>;
-  starships$!: Observable<StarshipResponse>;
+  combineResources$!: Observable<[PeopleResponse, StarshipResponse]>
 
   constructor(private resourcesService: ResourcesService) {
   }
 
   ngOnInit(): void {
-    this.drawCards();
+    this.getResources();
   }
 
-  drawCards(): void {
-    this.people$ = this.resourcesService.getPeopleData().pipe(map((data) => data.results));
-    this.starships$ = this.resourcesService.getStarshipsData().pipe(map((data) => data.results));
+  getResources(): void {
+    this.combineResources$ = combineLatest([
+      this.resourcesService.getPeopleData().pipe(map(data => data.results)),
+      this.resourcesService.getStarshipsData().pipe(map(data => data.results))
+    ]);
   }
 }

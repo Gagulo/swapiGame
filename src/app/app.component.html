@@ -1,6 +1,3 @@
-<div>
-  <app-content-card [cardContent]="people$ | async"></app-content-card>
-</div>
-<div>
-  <app-content-card [cardContent]="starships$ | async"></app-content-card>
+<div *ngIf="combineResources$ | async as resources">
+  <app-content-card [cardContent]="resources"></app-content-card>
 </div>
