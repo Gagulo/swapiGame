@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  color: white;
+  gap: 5px;
+
+  .title {
+    margin: 10px;
+  }
+
+  .card-content {
+    margin-top: 10px;
+  }
+}
+
+.score {
+  display: grid;
+  place-items: center;
+}
+.button {
+  display: grid;
+  place-items: center;
+}
