@@ -1,18 +1,21 @@
-<mat-card *ngIf="person">
-  <mat-card-title>Player 1 - Person</mat-card-title>
-  <mat-card-content>
-    <p>Name: {{ person.name ?? '' }}</p>
-    <p>Mass: {{ person.mass ?? '' }}</p>
-  </mat-card-content>
-</mat-card>
-<mat-card *ngIf="starship">
-  <mat-card-title>Player 2 - Starship</mat-card-title>
-  <mat-card-content>
-    <p>Name: {{ starship.name ?? '' }}</p>
-    <p>Mass: {{ starship.crew ?? '' }}</p>
-  </mat-card-content>
-</mat-card>
+<div class="wrapper">
+  <mat-card *ngIf="person">
+    <mat-card-title class="title">Person</mat-card-title>
+    <mat-card-content>
+      <p>Name: {{ person.name ?? '' }}</p>
+      <p>Mass: {{ person.mass ?? '' }}</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="starship">
+    <mat-card-title class="title">Starship</mat-card-title>
+    <mat-card-content>
+      <p>Name: {{ starship.name ?? '' }}</p>
+      <p>Mass: {{ starship.crew ?? '' }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
 
-<app-score-board [person]="person" [starship]="starship"></app-score-board>
-
-<button mat-button color="warn" (click)="pickRandomElement()">GAME</button>
+<app-score-board class="score" [person]="person" [starship]="starship"></app-score-board>
+<div class="button">
+  <button mat-button color="warn" (click)="pickRandomElement()">{{ person || starship ? 'Next Round' : 'Start Game' }}</button>
+</div>

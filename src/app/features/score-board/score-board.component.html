@@ -1,6 +1,6 @@
 <div *ngIf="person && starship">
   <div>Score Board:</div>
-  <div>person: {{ person?.mass }}</div>
-  <div>starship: {{ starship?.crew }}</div>
-  <div>{{winner(person.mass, starship.crew)}}</div>
+  <div>Person Mass: {{ person?.mass }}</div>
+  <div>Starship Crew: {{ starship?.crew }}</div>
+  <div>Winner: {{winner(person.mass, starship.crew)}}</div>
 </div>
