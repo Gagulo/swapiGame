@@ -9,6 +9,7 @@ import {ResourcesService} from "../../shared/services/resources.service";
 import {Subject} from "rxjs";
 import {takeUntil } from 'rxjs/operators';
 import {ScoreBoardComponent} from "../score-board/score-board.component";
+import {MatDivider} from "@angular/material/divider";
 
 @Component({
   selector: 'app-content-card',
@@ -20,7 +21,8 @@ import {ScoreBoardComponent} from "../score-board/score-board.component";
     NgIf,
     MatButton,
     AsyncPipe,
-    ScoreBoardComponent
+    ScoreBoardComponent,
+    MatDivider
   ],
   templateUrl: './content-card.component.html',
   styleUrl: './content-card.component.css'
