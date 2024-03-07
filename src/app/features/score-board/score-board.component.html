@@ -1,1 +1,6 @@
-<p>score-board works!</p>
+<div *ngIf="person && starship">
+  <div>Score Board:</div>
+  <div>person: {{ person?.mass }}</div>
+  <div>starship: {{ starship?.crew }}</div>
+  <div>{{winner(person.mass, starship.crew)}}</div>
+</div>
