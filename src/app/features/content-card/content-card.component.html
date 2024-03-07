@@ -1,14 +1,16 @@
 <div class="wrapper">
   <mat-card *ngIf="person">
     <mat-card-title class="title">Person</mat-card-title>
-    <mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-content class="card-content">
       <p>Name: {{ person.name ?? '' }}</p>
       <p>Mass: {{ person.mass ?? '' }}</p>
     </mat-card-content>
   </mat-card>
   <mat-card *ngIf="starship">
     <mat-card-title class="title">Starship</mat-card-title>
-    <mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-content class="card-content">
       <p>Name: {{ starship.name ?? '' }}</p>
       <p>Mass: {{ starship.crew ?? '' }}</p>
     </mat-card-content>

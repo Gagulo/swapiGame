@@ -2,12 +2,20 @@ import {Component, Input} from '@angular/core';
 import {PersonDetails} from "../../shared/models/person.model";
 import {StarshipDetails} from "../../shared/models/starship.model";
 import {NgIf} from "@angular/common";
+import {MatCard, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle} from "@angular/material/card";
+import {MatDivider} from "@angular/material/divider";
 
 @Component({
   selector: 'app-score-board',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    MatCard,
+    MatCardTitle,
+    MatCardHeader,
+    MatCardContent,
+    MatDivider,
+    MatCardFooter
   ],
   templateUrl: './score-board.component.html',
   styleUrl: './score-board.component.css'
